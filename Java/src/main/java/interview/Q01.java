@@ -10,26 +10,19 @@ public class Q01 {
             System.out.println("Deposit - 2");
             System.out.println("Withdrawal - 3");
             System.out.println("Exit - 4");
-            System.out.print("Please Select the Action: ");
+            System.out.print("\nPlease Select the Action: ");
             choose = scanner.nextInt();
 
-            switch (choose) {
-                case 1:
-                    learning();
-                    break;
-                case 2:
-                    deposit();
-                    break;
-                case 3:
-                    withdrawal();
-                    break;
-                case 4:
-                    System.out.println("Exit is Done - See You Soon");
-                    break;
-                default:
-                    System.out.println("Invalid Selection");
-                    break;
-            }
+            if (choose == 1)
+                learning();
+            else if (choose == 2)
+                deposit();
+            else if (choose == 3)
+                withdrawal();
+            else if (choose == 4)
+                System.out.println("Exit is Done - See You Soon");
+            else
+                System.out.println("Invalid Selection");
         }
     }
     private static double balence = 1000;
@@ -41,7 +34,7 @@ public class Q01 {
         System.out.print("Enter the amount you want to deposit: ");
         double depositPrice = scanner.nextDouble();
 
-        balence += Double.valueOf(depositPrice);
+        balence += depositPrice;
         System.out.println("New Balance: " + balence + " ₺");
     }
     private static void withdrawal() {
@@ -51,8 +44,9 @@ public class Q01 {
 
         if (withdrawPrice > balence) {
             System.out.println("Insufficient Funds");
-        } else {
-            balence -= Double.valueOf(withdrawPrice);
+        }
+        else {
+            balence -= withdrawPrice;
             System.out.println("New Balance: " + balence + " ₺");
         }
     }
