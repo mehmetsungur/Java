@@ -1,6 +1,6 @@
 package day12lopps;
 
-public class Loop01 {
+public class Loops01 {
     public static void main(String[] args) {
         String str = "ankara";
         String newStr ="";
