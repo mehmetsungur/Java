@@ -1,5 +1,4 @@
 package day16arrays;
-
 import java.util.Arrays;
 
 public class Arrays07 {
