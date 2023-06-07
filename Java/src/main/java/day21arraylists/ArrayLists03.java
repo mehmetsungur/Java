@@ -1,5 +1,4 @@
 package day21arraylists;
-
 import java.util.List;
 
 public class ArrayLists03 {
