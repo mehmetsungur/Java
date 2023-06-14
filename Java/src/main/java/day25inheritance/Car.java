@@ -1,0 +1,13 @@
+package day25inheritance;
+
+public class Car {
+    public Car(){
+        this("make");
+        System.out.println("Car 1");
+    }
+    public Car(String make){
+        super();
+        System.out.println("Car 2");
+    }
+    public int km=20000;
+}
