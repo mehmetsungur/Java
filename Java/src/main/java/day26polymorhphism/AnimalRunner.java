@@ -6,5 +6,6 @@ public class AnimalRunner {
         cats.eat();
         cats.meow();
         cats.Add(3,5);
+        cats.multiply(1,9);
     }
 }

@@ -12,6 +12,15 @@ public class Animal {
     varsa return type degisitirilebilir
     6) Methodun return type i primitive ise overriding yaraken return type degistirilimez. Cunku return type ya ayni olur veya
     parent tan secilir, ama primitive ler arasinda parent child iliskisi olmadiginidan parent tan secmek sozkonusu olamaz
+    7) Child da override edilen methodun return typei ile parenttaki methodun return typi arasinda IS-A iliskisi
+    yoksa return type degisitirilemez.
+    Mesela;
+    Integer wrapper class ile Long wrapper class arasinda IS-A iliskisi YOKTUR. o yuzden degistirilemez
+    8) Methodun return type i void ise, Overriding yaparken return type degistirilemez.
+    9) "static" methodlar override edilemezler. Cunku static methodlar tum child lar icin ortak methodlardir.
+    mesela bir child bir ortak methodu degistirdiginde diger childlar bundan olumsuz etkilenebilir. Bu nedenle java
+    static methodlarin override edilmesine izin vermez.
+    10) final methodlar override edilemezler.
      */
     public void eat(){
         System.out.println("Animals eat");
@@ -26,5 +35,13 @@ public class Animal {
 
     public int Add(int a,int b){
         return a+b;
+    }
+
+    public Integer multiply(Integer a,Integer b){
+        return a*b;
+    }
+
+    public final double circleArea(double r){
+        return 3.14*r*r;
     }
 }
