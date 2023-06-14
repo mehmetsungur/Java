@@ -19,8 +19,4 @@ public class Cat extends Animal {
     public Integer multiply(Integer a, Integer b) {
         return a*b;
     }
-    @Override
-    public final double circleArea(double r) {
-        return 3.14*r;
-    }
 }
