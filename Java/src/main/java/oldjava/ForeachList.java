@@ -11,7 +11,9 @@ public class ForeachList {
         numbers.add(2);
         numbers.add(5);
 
-        Collections.sort(numbers);
+        int sum =0;
+
+        // Collections.sort(numbers);
 
         for (int i=0;i<numbers.size();i++){
             System.out.print(numbers.get(i) + " ");
@@ -20,6 +22,17 @@ public class ForeachList {
         System.out.println();
 
         for(Integer w: numbers){
+            System.out.print(w + " ");
+        }
+
+        System.out.println();
+
+        for (Integer w: numbers){
+            sum += w;
+        }
+        System.out.println("Sum: " + sum);
+
+        for (Integer w: numbers.subList(1,4)){
             System.out.print(w + " ");
         }
     }
