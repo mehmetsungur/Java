@@ -1,20 +1,30 @@
 package oldjava;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TypeCasting {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Day: ");
-        String day = scan.next();
+        String str = "";
 
-        if(day.equalsIgnoreCase("Cuma"))
-            System.out.println("Muslim");
-        else if (day.equalsIgnoreCase("Cumartesi"))
-            System.out.println("Indian");
-        else if (day.equalsIgnoreCase("Pazar"))
-            System.out.println("Christian");
-        else
-            System.out.println("Invalid Day");
+        List<String> list = new ArrayList<>();
+        do{
+            System.out.print("str: ");
+            str = scan.next();
+            if(!str.equals("0")){
+                list.add(str);
+            }
+        }while (!str.equals("0"));
+
+        System.out.println(list);
+
+        int multiply = 1;
+        for (int i=0;i<list.size();i++){
+            multiply *= Integer.parseInt(list.get(i));
+        }
+
+        System.out.println(multiply);
     }
 }
