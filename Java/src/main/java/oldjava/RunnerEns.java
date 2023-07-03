@@ -12,5 +12,11 @@ public class RunnerEns {
 
         ens.setName("Sungur");
         System.out.println(ens.getName());
+
+        Ens01 obj01 = new Ens01();
+        obj01.setNum(38);
+        System.out.println(obj01.getNum());
+        System.out.println(obj01.getName());
+
     }
 }
