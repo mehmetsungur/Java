@@ -15,9 +15,4 @@ public class Cat extends Animal{
     public int multiply() {
         return 4*5;
     }
-
-    @Override
-    public Animal create() {
-        return new Cat();
-    }
 }
