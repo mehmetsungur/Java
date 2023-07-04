@@ -17,7 +17,7 @@ public class Cat extends Animal{
     }
 
     @Override
-    public Cat create() {
+    public Animal create() {
         return new Cat();
     }
 }
