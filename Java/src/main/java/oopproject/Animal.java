@@ -12,8 +12,4 @@ public class Animal {
     public int multiply(){
         return 2*3;
     }
-
-    public Animal create(){
-        public new Animal();
-    }
 }
