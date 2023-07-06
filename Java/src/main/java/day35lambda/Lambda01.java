@@ -1,6 +1,7 @@
 package day35lambda;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,6 +29,18 @@ public class Lambda01 {
         System.out.println();
 
         printElements05(myList);
+        System.out.println();
+
+        printElements06(myList);
+        System.out.println();
+
+        printElements07(myList);
+        System.out.println();
+
+        printElements08(myList);
+        System.out.println();
+
+        printElements09(myList);
         System.out.println();
     }
 
@@ -67,6 +80,8 @@ public class Lambda01 {
     }
 
     public static void printElements05(List<String> myList){
+        long started = System.nanoTime();
+
         myList
                 .stream()
                 .distinct()
@@ -74,5 +89,70 @@ public class Lambda01 {
                 .map(t->t.toUpperCase())
                 .sorted()
                 .forEach(t -> System.out.print( t + " "));
+
+
+        long stopped = System.nanoTime();
+        long timer = stopped - started;
+        System.out.print("\nWorking Time: " + timer + " ns");
+    }
+
+    public static void printElements06(List<String> myList){
+        long started = System.nanoTime();
+
+        myList
+                .stream()
+                .distinct()
+                .map(t->t.toLowerCase())
+                .sorted(Comparator.comparing(t->t.length()))
+                .forEach(t -> System.out.print( t + " "));
+
+        long stopped = System.nanoTime();
+        long timer = stopped - started;
+        System.out.print("\nWorking Time: " + timer + " ns");
+    }
+
+    public static void printElements07(List<String> myList){
+        long started = System.nanoTime();
+
+        myList
+                .stream()
+                .distinct()
+                .map(t->t.toLowerCase())
+                .sorted(Comparator.comparing(t->t.length()))
+                .forEach(t -> System.out.print( t + " "));
+
+        long stopped = System.nanoTime();
+        long timer = stopped - started;
+        System.out.print("\nWorking Time: " + timer + " ns");
+    }
+
+    public static void printElements08(List<String> myList){
+        long started = System.nanoTime();
+
+        myList
+                .stream()
+                .distinct()
+                .map(String :: toLowerCase)
+                .sorted(Comparator.comparing(t->t.length()))
+                .forEach(t -> System.out.print( t + " "));
+
+        long stopped = System.nanoTime();
+        long timer = stopped - started;
+        System.out.print("\nWorking Time: " + timer + " ns");
+    }
+
+    public static void printElements09(List<String> myList){
+        long started = System.nanoTime();
+
+        myList
+                .stream()
+                .distinct()
+                .map(String :: toLowerCase)
+                .sorted(Comparator.comparing(String::length))
+                .forEach(Utils :: printForeachWithSpace);
+
+        long stopped = System.nanoTime();
+        long timer = stopped - started;
+        System.out.print("\nWorking Time: " + timer + " ns");
     }
 }
