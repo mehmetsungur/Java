@@ -5,6 +5,8 @@ public class Runner {
         Products products = new Products();
 
         Methods methods = new Methods();
-        methods.select(products);
+        double money = methods.money();
+        System.out.println("Account: $" + money);
+        System.out.println(methods.select(products));
     }
 }
