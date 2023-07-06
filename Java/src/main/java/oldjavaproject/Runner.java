@@ -7,6 +7,8 @@ public class Runner {
         Methods methods = new Methods();
         double money = methods.money();
         System.out.println("Account: $" + money);
-        System.out.println(methods.select(products));
+        methods.select(products);
+        methods.balance(products.getPrice(), money, products);
+        methods.purchase(products.getPrice(),money,products);
     }
 }

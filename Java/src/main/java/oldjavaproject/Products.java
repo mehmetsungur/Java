@@ -10,6 +10,7 @@ public class Products {
      private double water = 1.0;
      private double arizona = 1.5;
      private double skittles = 1.99;
+
      private int productNum;
      private double price;
 

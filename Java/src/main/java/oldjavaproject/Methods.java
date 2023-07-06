@@ -80,4 +80,24 @@ public class Methods {
 
         return 0;
     }
+
+    public void purchase(double price, double money, Products products){
+        while (money >= price){
+            money -= price;
+            System.out.println("Account: $" + money);
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Continue (Y/N): ");
+            char accept = scanner.next().toUpperCase().charAt(0);
+            if (accept  == 'N'){
+                System.out.println("Thank you, See you later");
+                break;
+            } else if (accept == 'Y') {
+                products.setPrice(select(products));
+                money = balance(products.getPrice(),money,products);
+            } else{
+                System.out.println("Attention! Just valid character Y || N");
+            }
+        }
+    }
 }
