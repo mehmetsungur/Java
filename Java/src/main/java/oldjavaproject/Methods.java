@@ -82,10 +82,9 @@ public class Methods {
     }
 
     public void purchase(double price, double money, Products products){
-        while (money >= price){
-            money -= price;
+        while (money >= products.getPrice()){
+            money -= products.getPrice();
             System.out.println("Account: $" + money);
-
             Scanner scanner = new Scanner(System.in);
             System.out.print("Continue (Y/N): ");
             char accept = scanner.next().toUpperCase().charAt(0);
