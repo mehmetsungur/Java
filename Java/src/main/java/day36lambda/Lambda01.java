@@ -60,5 +60,26 @@ public class Lambda01 {
                 .limit(3)
                 .collect(Collectors.toList());
         System.out.println(list2);
+
+        // Tüm course objectlerini öğrenci sayısına göre büyükten küçüğe dizerek yazınız.
+        List<Course> list3 = courses
+                .stream()
+                .sorted(Comparator.comparing(Course::getNumberOfStudents).reversed())
+                .collect(Collectors.toList());
+        System.out.println(list3);
+
+        // Tüm course objectlerinde ingilizce bölümlerinin sayısını veren kodu yazınız.
+        long count = courses
+                .stream()
+                .filter(t->t.getCourseName().contains("English"))
+                .count();
+        System.out.println(count);
+
+        // Tüm course objectlerinde öğrenci sayıları 140'dan az olan kursları bir liste halinde veren kodu yazınız.
+        List<Course> list4 = courses
+                .stream()
+                .filter(t->t.getNumberOfStudents()<140)
+                .collect(Collectors.toList());
+        System.out.println(list4);
     }
 }
