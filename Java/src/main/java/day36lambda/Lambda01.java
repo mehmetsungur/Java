@@ -3,6 +3,7 @@ package day36lambda;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Lambda01 {
     public static void main(String[] args) {
@@ -43,5 +44,21 @@ public class Lambda01 {
                 .get()
                 .getCourseName();
         System.out.println(r4);
+
+        // Tüm course objectlerini Average score küçükten büyüğe diziniz ve ilk ikisini liste halinde yazınız.
+        List<Course> list1 = courses
+                .stream()
+                .sorted(Comparator.comparing(Course::getAverageScore))
+                .skip(2)
+                .collect(Collectors.toList());
+        System.out.println(list1);
+
+        // Tüm course objectlerini Average score küçükten büyüğe diziniz ve ilk üçünü liste halinde yazınız.
+        List<Course> list2 = courses
+                .stream()
+                .sorted(Comparator.comparing(Course::getAverageScore))
+                .limit(3)
+                .collect(Collectors.toList());
+        System.out.println(list2);
     }
 }
