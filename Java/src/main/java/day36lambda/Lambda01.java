@@ -16,18 +16,22 @@ public class Lambda01 {
         courses.add(course3);
         courses.add(course4);
 
-        // Average Score' ların 91' den büyük olup-olmaığını bulunuz.
+        // Average Score' ların 91' den büyük olup-olmadığını kontrol ediniz.
         boolean r1 = courses
                 .stream()
                 .allMatch(t->t.getAverageScore()>91);
-
         System.out.println(r1);
 
-        // Kurs isimlerinden "Turkish" harfini içerip-içermediğini bulunuz.
+        // Kurs isimlerinden "Turkish" harfini içerip-içermediğini kontrol ediniz.
         boolean r2 = courses
                 .stream()
                 .anyMatch(t->t.getCourseName().contains("Turkish"));
-
         System.out.println(r2);
+
+        // Kurs dönemleri içinde "Fall" kelimesinin hiç bulunmadığını kontrol ediniz.
+        boolean r3 = courses
+                .stream()
+                .noneMatch(t->t.getCourseName().contains("Fall"));
+        System.out.println(r3);
     }
 }
