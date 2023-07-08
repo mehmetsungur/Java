@@ -1,14 +1,15 @@
 package day36lambda;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Lambda01 {
     public static void main(String[] args) {
-        Course course1 = new Course("Summer","Turkish",97,128);
-        Course course2 = new Course("Winter","English",98,154);
-        Course course3 = new Course("Spring","Turkish",93,113);
-        Course course4 = new Course("Summer","English",94,129);
+        Course course1 = new Course("Summer","TurkishDay",97,128);
+        Course course2 = new Course("Winter","EnglishNight",98,154);
+        Course course3 = new Course("Spring","TurkishNight",93,113);
+        Course course4 = new Course("Summer","EnglishDay",94,129);
 
         List<Course> courses = new ArrayList<>();
         courses.add(course1);
@@ -33,5 +34,14 @@ public class Lambda01 {
                 .stream()
                 .noneMatch(t->t.getCourseName().contains("Fall"));
         System.out.println(r3);
+
+        // Average score en yüksek olan kursun ismini bulunuz.
+        String r4 = courses
+                .stream()
+                .sorted(Comparator.comparing(Course::getAverageScore).reversed())
+                .findFirst()
+                .get()
+                .getCourseName();
+        System.out.println(r4);
     }
 }
