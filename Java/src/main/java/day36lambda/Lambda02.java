@@ -40,7 +40,7 @@ public class Lambda02 {
         //Example 5: Verilen text file icindeki text'lerde toplam kaç harf kullanıldığını bulunuz.
         long count = Files
                 .lines(Paths.get("Java/src/main/java/day36lambda/LambdaTextFile.txt"))
-                .map(t->t.replaceAll("^a-zA-Z","")
+                .map(t->t.replaceAll("[^a-zA-Z]","")
                         .split(""))
                 .flatMap(Arrays::stream)
                 .count();
