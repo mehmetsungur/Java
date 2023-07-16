@@ -51,5 +51,8 @@ public class Collections {
 
         ll1.removeAll(ll1);
         System.out.println(ll1);
+
+        // 1. index getir
+        System.out.println(ll1.get(1));
     }
 }
