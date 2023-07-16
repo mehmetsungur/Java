@@ -48,5 +48,8 @@ public class Collections {
         // İlgili index i siler
         ll1.remove(1);
         System.out.println(ll1);
+
+        ll1.removeAll(ll1);
+        System.out.println(ll1);
     }
 }
