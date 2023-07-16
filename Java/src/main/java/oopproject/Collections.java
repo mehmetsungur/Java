@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class Collections {
     public static void main(String[] args) {
-        List<String> ll1 = new LinkedList<>();
+        LinkedList<String> ll1 = new LinkedList<>();
         ll1.add("A");
         ll1.add("B");
         ll1.add("C");
@@ -28,6 +28,13 @@ public class Collections {
         System.out.println(ll1);
 
         ll1.addAll(2,ll2);
+        System.out.println(ll1);
+
+        // List LinkedList olarak değiştirildikten sonra addFirst ve addLast methodları geldi.
+        ll1.addFirst("AAA");
+        System.out.println(ll1);
+
+        ll1.addLast("ZZZ");
         System.out.println(ll1);
     }
 }
