@@ -3,6 +3,7 @@ package oldjava;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Iterator01 {
     public static void main(String[] args) {
@@ -47,5 +48,63 @@ public class Iterator01 {
             String el = iterator.next();
             System.out.print(el + " ");
         }
+        System.out.println();
+
+        Iterator<String> iterator1 = list1.iterator();
+        while (iterator1.hasNext()){
+            iterator1.next();
+            iterator1.remove();
+        }
+        System.out.println(list1);
+
+        List<String> list2 = new ArrayList<>();
+        list2.add("k");
+        list2.add("l");
+        list2.add("m");
+        list2.add("n");
+        System.out.println(list2);
+
+        ListIterator<String> listIterator = list2.listIterator();
+        while (listIterator.hasNext()){
+            String el = listIterator.next();
+            listIterator.set(el + "!");
+            listIterator.add(el);
+        }
+        System.out.println(list2);
+
+        List<String> list3 = new ArrayList<>();
+        list3.add("a");
+        list3.add("aa");
+        list3.add("aaa");
+        list3.add("aaaa");
+        System.out.println(list3);
+        ListIterator<String> listIterator1 = list3.listIterator();
+        while (listIterator1.hasNext()){
+            listIterator1.next();
+        }
+        while (listIterator1.hasPrevious()){
+            String el = listIterator1.previous();
+            System.out.print(el + " ");
+        }
+        System.out.println();
+
+        List<String> list4 = new ArrayList<>();
+        list4.add("a");
+        list4.add("aa");
+        list4.add("aaa");
+        list4.add("aaaa");
+        System.out.println(list3);
+        ListIterator<String> it4 = list4.listIterator();
+        while (it4.hasNext()){
+            String el = it4.next();
+            it4.next();
+            it4.set("*" + el);
+        }
+        while (it4.hasPrevious()){
+            String el = it4.previous();
+            System.out.print(el + " ");
+        }
+        System.out.println();
+        System.out.println(list4);
     }
 }
