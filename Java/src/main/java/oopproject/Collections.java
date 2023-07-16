@@ -36,5 +36,17 @@ public class Collections {
 
         ll1.addLast("ZZZ");
         System.out.println(ll1);
+
+        // İlk elemanı siler
+        ll1.remove();
+        System.out.println(ll1);
+
+        // İlk elemanı daha hızlı siler
+        ll1.removeFirst();
+        System.out.println(ll1);
+
+        // İlgili index i siler
+        ll1.remove(1);
+        System.out.println(ll1);
     }
 }
