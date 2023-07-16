@@ -1,5 +1,6 @@
 package oldjava;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -24,5 +25,8 @@ public class Collections1 {
             System.out.println("Ne Hırsızı");
             System.out.println(ll);
         }
+
+        HashSet<String> hs1 = new HashSet<>();
+        System.out.println(hs1.hashCode());
     }
 }
