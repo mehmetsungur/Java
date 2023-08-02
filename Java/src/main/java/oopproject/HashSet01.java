@@ -15,10 +15,10 @@ public class HashSet01 {
         hs1.add("A");
         hs1.add("B");
         hs1.add("C");
-        hs1.add("E");
+        hs1.add("example");
         hs1.add("D");
         // HashSet' e tekrarlı eleman yollarsanız üzerine yazar.
-        hs1.add("E");
+        hs1.add("example");
         hs1.add(null);
 
         System.out.println(hs1);

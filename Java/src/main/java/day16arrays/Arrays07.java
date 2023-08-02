@@ -8,7 +8,7 @@ public class Arrays07 {
         colors[1] = "B";
         colors[2] = "C";
         colors[3] = "D";
-        colors[4] = "E";
+        colors[4] = "example";
         colors[5] = "F";
 
         System.out.println(Arrays.toString(colors));

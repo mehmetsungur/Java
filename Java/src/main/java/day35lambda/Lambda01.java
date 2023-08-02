@@ -61,7 +61,7 @@ public class Lambda01 {
         myList
                 .stream()
                 .sorted()
-                .filter(t -> !t.startsWith("E"))
+                .filter(t -> !t.startsWith("example"))
                 .forEach(t -> System.out.print( t + " "));
     }
 

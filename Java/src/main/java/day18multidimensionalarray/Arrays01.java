@@ -1,9 +1,8 @@
 package day18multidimensionalarray;
-import java.util.Arrays;
 import java.util.Scanner;
 public class Arrays01 {
     public static void main(String[] args) {
-        String [][] names = {{"A","B"},{"C","D"},{"E","F"}};
+        String [][] names = {{"A","B"},{"C","D"},{"example","F"}};
         Scanner input = new Scanner(System.in);
         System.out.print("Value: ");
         String v = input.nextLine();

@@ -10,7 +10,7 @@ public class Concat {
         concat("A","B");
         concat("A","B","C");
         printer("Name");
-        printer("","M","E","H","M","E","T");
+        printer("","M", "example","H","M", "example","T");
     }
     /*
     public static void add(int a,int b){

@@ -13,12 +13,12 @@ public class ArrayLists02 {
 
         ArrayList<String> names2 = new ArrayList<>();
         names2.add("D");
-        names2.add("E");
+        names2.add("example");
         names2.add("F");
 
         ArrayList<String> names3 = new ArrayList<>();
         names3.add("D");
-        names3.add("E");
+        names3.add("example");
         names3.add("F");
 
         boolean r = names1.equals(names2);
