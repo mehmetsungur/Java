@@ -19,6 +19,8 @@ public class Wildcard {
         addElements(objectList);
         System.out.println(objectList);
 
+        System.out.println("*************************");
+
         // Integer parent değil
         //addElements(doubleList);
         //System.out.println(doubleList);
@@ -28,15 +30,20 @@ public class Wildcard {
         //System.out.println(stringList);
 
         multiplyByTwo(integerList);
-        System.out.println(integerList);
-
         multiplyByTwo(doubleList);
-        System.out.println(doubleList);
-
         multiplyByTwo(numberList);
-        System.out.println(numberList);
 
-        // Üstten sınırlandırma yapıldı
+        System.out.println("*************************");
+
+        printElements(integerList);
+        printElements(doubleList);
+        printElements(numberList);
+        printElements(stringList);
+        printElements(objectList);
+
+        System.out.println("*************************");
+
+        //Üstten sınırlandırma yapıldı
         //multiplyByTwo(objectList);
         //System.out.println(objectList);
     }
@@ -49,6 +56,16 @@ public class Wildcard {
 
     public static void multiplyByTwo(List<? extends Number> list){
         list.stream().map(t->2*t.doubleValue()).forEach(t-> System.out.print(t + " "));
+        System.out.println();
+    }
+
+    public static void printElements(List<?> unknownList){
+        unknownList.add(null);
+        for (Object o:unknownList){
+            System.out.println(o);
+        }
+
+        System.out.print(unknownList.size());
         System.out.println();
     }
 }
