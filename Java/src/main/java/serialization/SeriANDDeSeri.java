@@ -1,13 +1,11 @@
 package serialization;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class SeriANDDeSeri {
     public static void main(String[] args) {
-        writeObject();
+        //writeObject();
+        readObject();
     }
 
     public static void writeObject(){
@@ -36,4 +34,26 @@ public class SeriANDDeSeri {
             e.printStackTrace();
         }
     }
+
+    public static void readObject() {
+        try (FileInputStream fis = new FileInputStream("user.txt");
+             ObjectInputStream input = new ObjectInputStream(fis)) {
+
+            while (true) {
+                try {
+                    User user = (User) input.readObject();
+                    System.out.println(user);
+                } catch (EOFException e) {
+                    break; // dosyanın sonuna ulaşıldı
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
