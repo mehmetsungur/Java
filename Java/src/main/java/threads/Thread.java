@@ -26,6 +26,13 @@ public class Thread {
                 System.out.println("alternative: " + java.lang.Thread.currentThread().getName()));
         anonymous1.setName("alternative");
         anonymous1.start();
+
+        try {
+            java.lang.Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }
+        System.out.println("Sleep - 1000");
     }
 }
 
