@@ -1,6 +1,6 @@
 package threads;
 
-public class Thread {
+public abstract class Thread {
     public static void main(String[] args) {
         System.out.println("Mevcut Thread: " + java.lang.Thread.currentThread().getName());
 
@@ -34,6 +34,8 @@ public class Thread {
         }
         System.out.println("Sleep - 1000");
     }
+
+    public abstract void run() throws InterruptedException;
 }
 
 class MyThread extends java.lang.Thread{
