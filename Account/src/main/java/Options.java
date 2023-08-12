@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class Options extends Account {
     Scanner scan = new Scanner(System.in);
-    DecimalFormat paraFormat = new DecimalFormat("'$'###,##.00");
+    DecimalFormat paraFormat = new DecimalFormat("'$'#,###.00");
     HashMap<Integer, Integer> musteriData = new HashMap<Integer,Integer>();
 
     public void login(){
@@ -36,9 +36,21 @@ public class Options extends Account {
                 }
             }
             Set<Map.Entry<Integer, Integer>> musteriDataSet = musteriData.entrySet();
+            int count=0;
             for(Map.Entry<Integer,Integer> w : musteriDataSet){
                 if(w.getKey() == getMusteriNo() && w.getValue() == getPinNo()){
                     islemSec();
+                }else{
+                    count++;
+                }
+            }
+            if(count==musteriDataSet.size()){
+                System.out.println("Müşteri veya PIN numarası Hatalı");
+                System.out.println("Tekrar denemek için herhangi bir sayıya basınız");
+                System.out.print("Çıkmak için q tuşuna basınız: ");
+                String cikis = scan.next().toLowerCase();
+                if (cikis.equals("q")){
+                    flag = false;
                 }
             }
         }while (flag);
@@ -46,9 +58,9 @@ public class Options extends Account {
 
     public void islemSec(){
         System.out.println("Hangi İşlemi");
-        System.out.print("1: Vadesiz Hesap İşlemleri");
-        System.out.print("2: Vadeli Hesap İşlemleri");
-        System.out.print("3: Cikis");
+        System.out.println("1: Vadesiz Hesap İşlemleri");
+        System.out.println("2: Vadeli Hesap İşlemleri");
+        System.out.println("3: Cikis");
 
         int secim = scan.nextInt();
 

@@ -8,7 +8,7 @@ public class Account {
     private double vadeli;
 
     Scanner scan = new Scanner(System.in);
-    DecimalFormat paraFormat = new DecimalFormat("'$'###,##.00");
+    DecimalFormat paraFormat = new DecimalFormat("'$'#,###.00");
 
     public int getMusteriNo() {
         return musteriNo;
