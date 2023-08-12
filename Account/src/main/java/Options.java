@@ -40,6 +40,7 @@ public class Options extends Account {
             for(Map.Entry<Integer,Integer> w : musteriDataSet){
                 if(w.getKey() == getMusteriNo() && w.getValue() == getPinNo()){
                     islemSec();
+                    flag = false;
                 }else{
                     count++;
                 }
@@ -106,6 +107,7 @@ public class Options extends Account {
                     System.out.println("Yanlış Giriş yaptınız.");
             }
         }while (true);
+        islemSec();
     }
 
     public void vadeliIslemler(){
@@ -134,5 +136,6 @@ public class Options extends Account {
                     System.out.println("Yanlış Giriş yaptınız.");
             }
         }while (true);
+        islemSec();
     }
 }
