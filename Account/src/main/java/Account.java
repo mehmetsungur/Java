@@ -1,5 +1,5 @@
-import java.text.DecimalFormat;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Account {
     private int musteriNo;

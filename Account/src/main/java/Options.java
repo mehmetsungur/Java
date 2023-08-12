@@ -1,8 +1,8 @@
-import java.text.DecimalFormat;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.Set;
+import java.util.Scanner;
+import java.util.HashMap;
+import java.text.DecimalFormat;
 
 public class Options extends Account {
     Scanner scan = new Scanner(System.in);
@@ -66,10 +66,10 @@ public class Options extends Account {
 
         switch (secim){
             case 1:
-                //vadesiz işlemler
+                vadesizIslemler();
                 break;
             case 2:
-                //vadeli işlemler
+                vadeliIslemler();
                 break;
             case 3:
                 System.out.println("Teşekkürler, Tekrar Bekleriz..");
@@ -78,5 +78,61 @@ public class Options extends Account {
                 System.out.println("Lütfen geçerli bir seçim yapınız ..");
                 islemSec();
         }
+    }
+
+    public void vadesizIslemler(){
+        do {
+            System.out.println("Yapmak istediğiniz işlemi seçiniz");
+            System.out.println("1. Hesap makinesi inceleme");
+            System.out.println("2. Para Çekme");
+            System.out.println("3. Para Yatırma");
+            System.out.println("3. Çıkış");
+
+            int secim = scan.nextInt();
+            if (secim == 4) {
+                break;
+            }
+            switch (secim){
+                case 1:
+                    System.out.println("Vadesiz Hesap Bakiyeniz: " + paraFormat.format(getVadesiz()));
+                    break;
+                case 2:
+                    vadesizBakiyeParaCekildiktenSonra();
+                    break;
+                case 3:
+                    vadesizBakiyeParaYatirdiktanSonra();
+                    break;
+                default:
+                    System.out.println("Yanlış Giriş yaptınız.");
+            }
+        }while (true);
+    }
+
+    public void vadeliIslemler(){
+        do {
+            System.out.println("Yapmak istediğiniz işlemi seçiniz");
+            System.out.println("1. Hesap makinesi inceleme");
+            System.out.println("2. Para Çekme");
+            System.out.println("3. Para Yatırma");
+            System.out.println("3. Çıkış");
+
+            int secim = scan.nextInt();
+            if (secim == 4) {
+                break;
+            }
+            switch (secim){
+                case 1:
+                    System.out.println("Vadeli Hesap Bakiyeniz: " + paraFormat.format(getVadeli()));
+                    break;
+                case 2:
+                    vadeliBakiyeParaCekildiktenSonra();
+                    break;
+                case 3:
+                    vadeliBakiyeParaYatirdiktanSonra();
+                    break;
+                default:
+                    System.out.println("Yanlış Giriş yaptınız.");
+            }
+        }while (true);
     }
 }
